@@ -1,0 +1,136 @@
+/* ===== TEMA DE FUENTES ===== */
+
+/* Importar las fuentes de Fontsource */
+@import '@fontsource/lato/300.css';
+@import '@fontsource/lato/400.css';
+@import '@fontsource/lato/700.css';
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+
+/* ===== VARIABLES CSS ===== */
+:root {
+  /* Familias de fuentes */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+  
+  /* Pesos de fuente */
+  --font-light: 300;
+  --font-regular: 400;
+  --font-bold: 700;
+  
+  /* Tamaños de fuente */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  
+  /* Altura de línea */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+}
+
+/* ===== CLASES DE TÍTULOS (PLAYFAIR DISPLAY) ===== */
+.title-1 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+}
+
+.title-2 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+}
+
+.title-3 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-bold);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+}
+
+.title-4 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-regular);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-normal);
+}
+
+.title-5 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-regular);
+  font-size: var(--text-xl);
+  line-height: var(--leading-normal);
+}
+
+/* ===== CLASES DE TEXTO (LATO) ===== */
+.text-body {
+  font-family: var(--font-body);
+  font-weight: var(--font-regular);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.text-body-large {
+  font-family: var(--font-body);
+  font-weight: var(--font-regular);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.text-body-small {
+  font-family: var(--font-body);
+  font-weight: var(--font-regular);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.text-caption {
+  font-family: var(--font-body);
+  font-weight: var(--font-light);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+.text-bold {
+  font-family: var(--font-body);
+  font-weight: var(--font-bold);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.text-light {
+  font-family: var(--font-body);
+  font-weight: var(--font-light);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+/* ===== CLASES DE UTILIDAD ===== */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-light {
+  font-weight: var(--font-light);
+}
+
+.font-regular {
+  font-weight: var(--font-regular);
+}
+
+.font-bold {
+  font-weight: var(--font-bold);
+}
