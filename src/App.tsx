@@ -1,48 +1,29 @@
 import './App.css'
 import './fonts.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import TopBar from './core/common/components/ui/TopBar'
-import Hero from './features/home/components/ui/Hero'
-import NextSection from './features/home/components/ui/NextSection'
-import LetsContact from './features/home/components/ui/LetsContact'
+import HomePage from './features/home/pages/HomePage'
+import AboutUsPage from './features/about_us/ui/pages/AboutUsPage'
 import Footer from './core/common/components/ui/Footer'
-import pikachuImage from './assets/pikachu_test.JPG'
   
 function App() {
   return (
-    <>
-      <TopBar title="PHARUS PHOTOGRAPHY" />
-      
-      {/* Contenido principal */}
-      <main>
-        <Hero 
+    <Router>
+      <div className="App">
+        <TopBar title="PHARUS PHOTOGRAPHY" />
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUsPage />} />
+        </Routes>
+        
+        <Footer 
           title="PHARUS PHOTOGRAPHY"
-          subtitle="Histoires d'amour illuminées par l'art"
-          imageUrl={pikachuImage}
-          imageAlt="Pikachu surfing - Test image"
+          contactText="Contact"
+          showSocialIcons={true}
         />
-        
-        <NextSection 
-          title="MEANINGFUL MEMORIES THROUGH AUTHENTIC AND PROFESSIONAL IMAGES"
-          description="I capture unique moments from the love of weddings to the essence of a product, the warmth of a family, or the strength of an individual portrait. My photography adapts to every story, brand, or emotion you want to share."
-          buttonText="Learn More"
-          // imageUrl="ruta-de-tu-imagen.jpg" // Descomenta cuando tengas la imagen
-        />
-        
-        <LetsContact 
-          title="Let's Connect"
-          description="Let's talk and bring your vision to life — every great story begins with a conversation."
-          buttonText="Contact Me"
-          imageUrl={pikachuImage}
-          imageAlt="Pikachu surfing - Contact background"
-        />
-      </main>
-      
-      <Footer 
-        title="PHARUS PHOTOGRAPHY"
-        contactText="Contact"
-        showSocialIcons={true}
-      />
-    </>
+      </div>
+    </Router>
   )
 }
 

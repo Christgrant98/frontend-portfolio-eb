@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useScrollEffect } from '../../hooks/useScrollEffect';
 import '../css/TopBar.css';
 
@@ -27,8 +28,8 @@ const TopBar: React.FC<TopBarProps> = ({
         {showNavigation && (
           <nav className="topbar-nav">
             <ul className="nav-list">
-              <li><a href="#home" className="nav-link font-heading">Home</a></li>
-              <li><a href="#about" className="nav-link font-heading">About Us</a></li>
+              <li><Link to="/" className="nav-link font-heading">Home</Link></li>
+              <li><Link to="/about" className="nav-link font-heading">About Us</Link></li>
               <li><a href="#services" className="nav-link font-heading">Services</a></li>
               <li><a href="#portfolio" className="nav-link font-heading">Portfolio</a></li>
               <li><a href="#contact" className="nav-link font-heading">Contact</a></li>
