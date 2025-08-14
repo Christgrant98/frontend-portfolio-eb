@@ -1,6 +1,6 @@
 import React from 'react';
 import { useScrollEffect } from '../../hooks/useScrollEffect';
-import '../TopBar.css';
+import '../css/TopBar.css';
 
 interface TopBarProps {
   title?: string;

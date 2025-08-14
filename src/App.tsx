@@ -3,6 +3,7 @@ import './fonts.css'
 import TopBar from './core/common/components/ui/TopBar'
 import Hero from './features/home/components/ui/Hero'
 import NextSection from './features/home/components/ui/NextSection'
+import Footer from './core/common/components/ui/Footer'
 import pikachuImage from './assets/pikachu_test.JPG'
   
 function App() {
@@ -26,6 +27,12 @@ function App() {
           // imageUrl="ruta-de-tu-imagen.jpg" // Descomenta cuando tengas la imagen
         />
       </main>
+      
+      <Footer 
+        title="PHARUS PHOTOGRAPHY"
+        contactText="Contact"
+        showSocialIcons={true}
+      />
     </>
   )
 }
