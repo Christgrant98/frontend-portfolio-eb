@@ -18,26 +18,35 @@ const AboutUs: React.FC<AboutUsProps> = ({
 }) => {
   return (
     <section className="about-us">
+      <div className="title-background">
+        <h2 className="about-title font-heading">{title}</h2>
+      </div>
+      
       <div className="about-container">
         {/* Columna Izquierda - Imagen */}
         <div className="about-image">
+          
           {imageUrl ? (
+
             <img 
               src={imageUrl} 
               alt={imageAlt} 
               className="cat-image"
             />
+            
           ) : (
             <div className="image-placeholder">
               <span>Cat Portrait</span>
             </div>
+            
+            
           )}
+          
         </div>
 
         {/* Columna Derecha - Contenido */}
         <div className="about-content">
-          <h2 className="about-title font-heading">{title}</h2>
-          <div className="about-description">
+          <div className="text-container">
             <p className="about-text font-body">
               Pharus Creative was born with a clear vision: to be a lighthouse for ideas, stories, and moments that deserve to be told with art.
             </p>
@@ -54,7 +63,6 @@ const AboutUs: React.FC<AboutUsProps> = ({
               We are based in Montreal, but we connect with people and ideas anywhere. Because here at Pharus Creative, love stories, brands, and moments are illuminated with art.
             </p>
           </div>
-          <button className="about-button font-body">{buttonText}</button>
         </div>
       </div>
     </section>
