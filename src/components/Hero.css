@@ -13,6 +13,7 @@
   margin-right: calc(-50vw + 50%);
   margin-top: -80px; /* Extender hacia arriba por encima del TopBar */
   padding-top: 80px; /* Compensar el margin-top negativo */
+  
 }
 
 /* ===== BACKGROUND IMAGE ===== */
@@ -61,11 +62,11 @@
 }
 
 .hero-text {
-  background: rgba(255, 255, 255, 0.95);
+  background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 3rem 4rem;
-  border-radius: 12px;
+  border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 800px;
