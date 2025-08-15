@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { SocialMediaCard } from '../../interfaces/socialMedia';
-import './ServiceCard.css';
+import '../css/ServiceCard.css';   
 
 interface ServiceCardProps {
   card: SocialMediaCard;
