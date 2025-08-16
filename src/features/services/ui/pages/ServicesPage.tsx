@@ -1,7 +1,7 @@
 import React from 'react';
 import ServicesGrid from '../components/ServicesGrid';
 import { socialMediaCards } from '../../constants/socialMedia';
-import './ServicesPage.css';
+import '../css/ServicesPage.css';
 
 const ServicesPage: React.FC = () => {
   return (
