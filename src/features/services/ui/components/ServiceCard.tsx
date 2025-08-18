@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import type { SocialMediaCard } from '../../interfaces/socialMedia';
 import '../css/ServiceCard.css';   
 
@@ -10,7 +11,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ card }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <Link 
+      to={`/services/${card.title.toLowerCase()}`}
       className="service-card"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -33,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ card }) => {
           <span className="arrow">→</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
