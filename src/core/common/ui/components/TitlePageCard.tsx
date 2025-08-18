@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/TitlePageCard.css';
+import '../css/TitlePageCard.css';
 
 interface TitlePageCardProps {
   assetPath: string;
