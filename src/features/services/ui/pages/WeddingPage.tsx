@@ -17,7 +17,11 @@ const WeddingPage: React.FC = () => {
       
       <div className="wedding-content">
         {weddingPackages.map((packageData, index) => (
-          <PromoCard key={index} data={packageData} />
+          <PromoCard 
+            key={index} 
+            data={packageData} 
+            isEven={index % 2 === 0}
+          />
         ))}
       </div>
     </div>

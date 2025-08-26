@@ -4,11 +4,12 @@ import type { PromoCardData } from '../interfaces/promoCard';
 
 interface PromoCardProps {
   data: PromoCardData;
+  isEven: boolean;
 }
 
-const PromoCard: React.FC<PromoCardProps> = ({ data }) => {
+const PromoCard: React.FC<PromoCardProps> = ({ data, isEven }) => {
   return (
-    <div className="promo-card">
+    <div className={`promo-card ${isEven ? 'promo-card-even' : 'promo-card-odd'}`}>
       <div className="promo-inner-container">
         <h2 className="promo-title">{data.title}</h2>
         <p className="promo-description">{data.description}</p>
