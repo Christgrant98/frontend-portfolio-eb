@@ -8,6 +8,7 @@
   width: 100%;
   min-height: 400px;
   position: relative;
+  z-index: -1;
 }
 
 .wedding-banner .title-page-card {

@@ -19,7 +19,7 @@ const WeddingPage: React.FC = () => {
         {weddingPackages.map((packageData, index) => (
           <PromoCard 
             key={index} 
-            data={packageData} 
+            data={packageData}
             isEven={index % 2 === 0}
           />
         ))}
