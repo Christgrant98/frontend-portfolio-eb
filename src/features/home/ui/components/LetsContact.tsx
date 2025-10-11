@@ -1,10 +1,12 @@
 import React from 'react';
 import '../css/LetsContact.css';
+import { Button } from '../../../../core/common/ui/components';
 
 interface LetsContactProps {
   title?: string;
   description?: string;
   buttonText?: string;
+  onButtonClick?: () => void;
   imageUrl?: string;
   imageAlt?: string;
 }
@@ -13,6 +15,7 @@ const LetsContact: React.FC<LetsContactProps> = ({
   title = "Let's Connect",
   description = "Let's talk and bring your vision to life — every great story begins with a conversation.",
   buttonText = "Contact Me",
+  onButtonClick,
   imageUrl,
   imageAlt = "Contact background"
 }) => {
@@ -26,7 +29,6 @@ const LetsContact: React.FC<LetsContactProps> = ({
             alt={imageAlt} 
             className="contact-image"
           />
-          <div className="contact-overlay"></div>
         </div>
       )}
       
@@ -35,7 +37,12 @@ const LetsContact: React.FC<LetsContactProps> = ({
         <div className="contact-text-container">
           <h2 className="contact-title font-heading">{title}</h2>
           <p className="contact-description font-body">{description}</p>
-          <button className="contact-button font-body">{buttonText}</button>
+          <Button 
+            text={buttonText}
+            onClick={onButtonClick}
+            variant="primary"
+            className="contact-button"
+          />
         </div>
       </div>
     </section>

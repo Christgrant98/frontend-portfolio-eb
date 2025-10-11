@@ -3,7 +3,8 @@ import Hero from '../components/Hero';
 import NextSection from '../components/NextSection';
 import LetsContact from '../components/LetsContact';
 import homeBanner from '../../../../assets/home_banner.png';
-import weddingImg from '../../../../assets/wedding_img.png'; 
+import weddingImg from '../../../../assets/wedding_img.png';
+import contactBg from '../../../../assets/contact_me_bg.png'; 
 
 
 
@@ -29,8 +30,8 @@ const HomePage: React.FC = () => {
         title="Let's Connect"
         description="Let's talk and bring your vision to life — every great story begins with a conversation."
         buttonText="Contact Me"
-        imageUrl={homeBanner}
-        imageAlt="Pikachu surfing - Contact background"
+        imageUrl={contactBg}
+        imageAlt="Wedding ceremony in church"
       />
     </main>
   );

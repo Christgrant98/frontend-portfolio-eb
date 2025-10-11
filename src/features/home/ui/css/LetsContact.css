@@ -3,14 +3,13 @@
 .lets-contact {
   position: relative;
   width: 100vw;
-  height: 60vh; /* Menos alta que el Hero */
-  min-height: 500px;
-  display: flex;
+  height: 70vh;
+  min-height: 600px;
+  display: absolute;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  justify-content: flex-start;
+  overflow: visible;
+  padding-left: 6rem;
 }
 
 /* ===== BACKGROUND IMAGE ===== */
@@ -28,110 +27,58 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-.contact-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(240, 240, 240, 0.8) 25%,
-    rgba(230, 230, 230, 0.7) 50%,
-    rgba(240, 240, 240, 0.8) 75%,
-    rgba(255, 255, 255, 0.9) 100%
-  );
-  backdrop-filter: blur(2px);
 }
 
 /* ===== CONTENT ===== */
 .contact-content {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: 800px;
-  padding: 0 2rem;
-  text-align: center;
+  width: auto;
+  max-width: none;
+  padding: 0;
+  text-align: left;
 }
 
 .contact-text-container {
-  /* background: rgba(255, 255, 255, 0.95); */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 3rem 4rem;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 5rem;
   animation: fadeInUp 0.8s ease-out;
+  margin-left: 0rem;
+  text-align: left;
+  max-width: 650px;
 }
 
 /* ===== TYPOGRAPHY ===== */
 .contact-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 400;
-  color: #0B2447;
+  color: #FFFFFF;
   margin: 0 0 1.5rem 0;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
+  letter-spacing: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 }
 
 .contact-description {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 300;
-  color: #4a5568;
+  color: #FFFFFF;
   margin: 0 0 2.5rem 0;
-  line-height: 1.6;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ===== BUTTON ===== */
-.contact-button {
-  background: #e2e8f0;
-  color: #2d3748;
-  border: none;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.contact-button:hover {
-  background: #cbd5e0;
-  color: #1a202c;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.contact-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.7;
+  opacity: 0.95;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
   .lets-contact {
-    height: 50vh;
-    min-height: 400px;
+    height: auto;
+    min-height: 500px;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   
   .contact-text-container {
-    padding: 2rem 2.5rem;
+    margin-top: 2rem;
   }
   
   .contact-title {
@@ -143,25 +90,24 @@
     font-size: 1.1rem;
     margin-bottom: 2rem;
   }
-  
-  .contact-button {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 480px) {
   .lets-contact {
-    height: 45vh;
-    min-height: 350px;
+    height: auto;
+    min-height: 450px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   
   .contact-content {
-    padding: 0 1rem;
+    padding: 0;
   }
   
   .contact-text-container {
-    padding: 1.5rem 2rem;
+    margin-top: 1rem;
   }
   
   .contact-title {
@@ -170,11 +116,6 @@
   
   .contact-description {
     font-size: 1rem;
-  }
-  
-  .contact-button {
-    padding: 0.75rem 1.75rem;
-    font-size: 0.9rem;
   }
 }
 
@@ -190,21 +131,3 @@
   }
 }
 
-/* ===== CHECKERBOARD PATTERN OVERLAY ===== */
-.lets-contact::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-  z-index: 1;
-  pointer-events: none;
-}
