@@ -1,14 +1,24 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import NextSection from '../components/NextSection';
 import LetsContact from '../components/LetsContact';
+import PortfolioMasonry from '../../../../components/PortfolioMasonry';
+import { portfolioItems } from '../../../../data/portfolio';
 import homeBanner from '../../../../assets/home_banner.png';
 import weddingImg from '../../../../assets/wedding_img.png';
 import contactBg from '../../../../assets/contact_me_bg.png'; 
 
-
-
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
+  
+  // Show only first 10 images as preview in home
+  const portfolioPreview = portfolioItems.slice(0, 10);
+  
+  const handleViewPortfolio = () => {
+    navigate('/portfolio');
+  };
+
   return (
     <main>
       <Hero 
@@ -24,6 +34,12 @@ const HomePage: React.FC = () => {
         buttonText="Contact Me"
         imageUrl={weddingImg}
         imageAlt="Wedding couple embrace"
+      />
+      
+      <PortfolioMasonry 
+        items={portfolioPreview}
+        ctaLabel="View My Portfolio"
+        onCtaClick={handleViewPortfolio}
       />
       
       <LetsContact 

@@ -9,6 +9,7 @@ import Footer from './core/common/ui/components/Footer'
 import WeddingPage from './features/services/ui/pages/WeddingPage'
 import PeopleStudioPortraitsPage from './features/services/ui/pages/PeopleStudioPortraitsPage'
 import ProductPhotographyPage from './features/services/ui/pages/ProductPhotographyPage'
+import PortfolioPage from './pages/PortfolioPage'
   
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/services/weddings" element={<WeddingPage />} />
           <Route path="/people-studio-portraits" element={<PeopleStudioPortraitsPage />} />
           <Route path="/product-photography" element={<ProductPhotographyPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
         </Routes>
         
         <Footer 

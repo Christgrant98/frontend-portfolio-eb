@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
+# Raw images (originals not in repo)
+raw/
 
-#Ignore cursor AI rules
-.cursor/rules/codacy.mdc
+# Generated optimized images
+public/portfolio/
