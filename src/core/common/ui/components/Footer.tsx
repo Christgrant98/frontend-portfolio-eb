@@ -1,15 +1,14 @@
 import React from 'react';
 import '../css/Footer.css';
+import pharusLogo from '../../../../assets/pharus_logo_black.png';
 
 interface FooterProps {
   title?: string;
-  contactText?: string;
   showSocialIcons?: boolean;
 }
 
 const Footer: React.FC<FooterProps> = ({ 
-  title = "PHARUS PHOTOGRAPHY",
-  contactText = "Contact",
+  title = "PHARUS CREATIVE",
   showSocialIcons = true
 }) => {
   return (
@@ -22,13 +21,12 @@ const Footer: React.FC<FooterProps> = ({
         <div className="nav-container">
           {/* Logo/Título */}
           <div className="footer-brand">
+            <img src={pharusLogo} alt="Pharus Creative Logo" className="footer-logo" />
             <h2 className="footer-title font-heading">{title}</h2>
           </div>
 
           {/* Contacto y redes sociales */}
           <div className="footer-contact">
-            <span className="contact-text font-heading">{contactText}</span>
-            
             {showSocialIcons && (
               <div className="social-icons">
                 <a href="#" className="social-link" aria-label="Instagram">

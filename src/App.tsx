@@ -27,7 +27,6 @@ function App() {
         
         <Footer 
           title="PHARUS PHOTOGRAPHY"
-          contactText="Contact"
           showSocialIcons={true}
         />
       </div>
