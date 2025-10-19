@@ -3,11 +3,11 @@
 }
 
 .people-studio-portraits-banner {
-
   width: 100%;
   min-height: 400px;
   position: relative;
   z-index: -1;
+  margin-top: 5rem;
 }
 
 .people-studio-portraits-banner .title-page-card {

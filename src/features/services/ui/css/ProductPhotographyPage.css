@@ -3,11 +3,9 @@
 }
 
 .product-photography-banner {
-
-
   min-height: 400px;
   position: relative;
-
+  margin-top: 5rem;
 }
 
 .product-photography-content {

@@ -5,7 +5,8 @@
 
 .wedding-banner {
   min-height: 400px;
-  position: relative;;
+  position: relative;
+  margin-top: 5rem; 
 }
 
 .wedding-banner .title-page-card {
