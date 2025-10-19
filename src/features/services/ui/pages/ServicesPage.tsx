@@ -1,6 +1,6 @@
 import React from 'react';
 import ServicesGrid from '../components/ServicesGrid';
-import { socialMediaCards } from '../../constants/socialMedia';
+import { serviceCardData } from '../../constants/serviceCardData';
 import '../css/ServicesPage.css';
 
 const ServicesPage: React.FC = () => {
@@ -11,7 +11,7 @@ const ServicesPage: React.FC = () => {
       </div>
       
       <div className="services-content">
-        <ServicesGrid cards={socialMediaCards} />
+        <ServicesGrid cards={serviceCardData} />
       </div>
     </div>
   );

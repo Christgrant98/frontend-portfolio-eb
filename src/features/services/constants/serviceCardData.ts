@@ -1,10 +1,10 @@
 import type { SocialMediaCard } from "../interfaces/socialMedia";
-import weddingImage from '../../../assets/wedding.png';
-import coupleImage from '../../../assets/couple.png';
-import paprikaImage from '../../../assets/paprika.png';
+import weddingImage from '../../../assets/wedding_service.png';
+import coupleImage from '../../../assets/family_session_service.png';
+import paprikaImage from '../../../assets/product_photo_service.png';
 import cupsImage from '../../../assets/cups.png';
 
-export const socialMediaCards: SocialMediaCard[] = [
+export const serviceCardData: SocialMediaCard[] = [
   {
     imagePath: weddingImage,
     title: 'Weddings',

@@ -11,9 +11,6 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ card, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  console.log('ServiceCard hover state:', isHovered);
-
-  // Determine the route based on the index
   const getRoute = () => {
     if (index === 1) {
       return '/people-studio-portraits';
