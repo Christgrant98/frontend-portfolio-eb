@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import NextSection from '../components/NextSection';
 import LetsContact from '../components/LetsContact';
+import PortfolioSection from '../components/PortfolioSection';
 import { useApp } from '../../../../core/contexts/AppContext';
 import homeBanner from '../../../../assets/home_banner.png';
 import weddingImg from '../../../../assets/wedding_img.png';
@@ -38,6 +39,8 @@ const HomePage: React.FC = () => {
         imageUrl={weddingImg}
         imageAlt="Wedding couple embrace"
       />
+      
+      <PortfolioSection />
       
       <LetsContact 
         title="Let's Connect"
