@@ -149,3 +149,36 @@
   }
 }
 
+/* ===== PORTFOLIO MODE STYLES ===== */
+.footer.portfolio-mode .footer-navigation {
+  background: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer.portfolio-mode .footer-title {
+  color: #FFFFFF;
+}
+
+.footer.portfolio-mode .contact-text {
+  color: #FFFFFF;
+}
+
+.footer.portfolio-mode .social-link {
+  color: #FFFFFF !important;
+}
+
+.footer.portfolio-mode .social-link:hover {
+  color: #FFFFFF !important;
+  opacity: 0.7;
+}
+
+.footer.portfolio-mode .social-link svg {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+}
+
+.footer.portfolio-mode .social-link:hover svg {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+}
+

@@ -1,7 +1,9 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import '../css/Footer.css';
 import { SOCIAL_LINKS } from '../../../constants/contactInfo';
-import pharusLogo from '../../../../assets/pharus_logo_black.png';
+import pharusLogoBlack from '../../../../assets/pharus_logo_black.png';
+import pharusLogoWhite from '../../../../assets/pharus_creative_logo.png';
 
 interface FooterProps {
   title?: string;
@@ -12,8 +14,12 @@ const Footer: React.FC<FooterProps> = ({
   title = "PHARUS CREATIVE",
   showSocialIcons = true
 }) => {
+  const location = useLocation();
+  const isPortfolioPage = location.pathname === '/portfolio';
+  const pharusLogo = isPortfolioPage ? pharusLogoWhite : pharusLogoBlack;
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${isPortfolioPage ? 'portfolio-mode' : ''}`}>
 
 
       <div className="footer-navigation">
