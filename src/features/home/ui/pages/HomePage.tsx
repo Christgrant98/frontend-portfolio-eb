@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
     // Establecer isHero como true en la página de inicio
     setIsHero(true);
     
-    // Cleanup: establecer isHero como false al salir de la página
+    // Cleanup: establecer isHero como false al salir de la página  
     return () => {
       setIsHero(false);
     };
@@ -40,7 +40,7 @@ const HomePage: React.FC = () => {
         imageAlt="Wedding couple embrace"
       />
       
-      <PortfolioSection />
+      <PortfolioSection isPreview={true} />
       
       <LetsContact 
         title="Let's Connect"

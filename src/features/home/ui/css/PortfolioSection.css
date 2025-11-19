@@ -1,5 +1,3 @@
-/* ===== PORTFOLIO SECTION STYLES ===== */
-
 .portfolio-section {
   padding: 6rem 0;
   background: transparent;
@@ -16,11 +14,9 @@
   height: auto;
   display: block;
   object-fit: cover;
-  /* Reduce rendering quality for performance */
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
   .portfolio-section {
     padding: 4rem 0;

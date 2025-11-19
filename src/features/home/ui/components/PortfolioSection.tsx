@@ -7,15 +7,19 @@ import '../css/PortfolioSection.css';
 
 interface PortfolioSectionProps {
   title?: string;
+  isPreview: boolean;
 }
 
-const PortfolioSection: React.FC<PortfolioSectionProps> = ({}) => {
+const PortfolioSection: React.FC<PortfolioSectionProps> = ({ isPreview }) => {
+  const PREVIEW_LIMIT = 11;
+  const displayData = isPreview ? PORTFOLIO_DATA.slice(0, PREVIEW_LIMIT) : PORTFOLIO_DATA;
+
   return (
     <section className="portfolio-section">
       <div className="portfolio-container">
         <Box sx={{ width: '100%' }}>
           <ImageList variant="masonry" cols={3} gap={8}>
-            {PORTFOLIO_DATA.map((item) => (
+            {displayData.map((item) => (
               <ImageListItem key={item.img}>
                 <img
                   src={item.img}

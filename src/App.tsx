@@ -6,6 +6,7 @@ import TopBar from './core/common/ui/components/TopBar'
 import HomePage from './features/home/ui/pages/HomePage'
 import AboutUsPage from './features/about_us/ui/pages/AboutUsPage'
 import ServicesPage from './features/services/ui/pages/ServicesPage'
+import PortfolioPage from './features/portfolio/ui/pages/PortfolioPage'
 import Footer from './core/common/ui/components/Footer'
 import WeddingPage from './features/services/ui/pages/WeddingPage'
 import PeopleStudioPortraitsPage from './features/services/ui/pages/PeopleStudioPortraitsPage'
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/services/weddings" element={<WeddingPage />} />
             <Route path="/people-studio-portraits" element={<PeopleStudioPortraitsPage />} />
             <Route path="/product-photography" element={<ProductPhotographyPage />} />
