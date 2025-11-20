@@ -1,0 +1,41 @@
+.wedding-page {
+  min-height: 100vh;
+
+}
+
+.wedding-banner {
+  min-height: 400px;
+  position: relative;
+  margin-top: 5rem; 
+}
+
+.wedding-banner .title-page-card {
+  height: 100%;
+  border-radius: 0;
+}
+
+.wedding-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .wedding-banner {
+    position: flex;
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .wedding-content {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wedding-banner {
+    height: 40vh;
+    min-height: 250px;
+  }
+}

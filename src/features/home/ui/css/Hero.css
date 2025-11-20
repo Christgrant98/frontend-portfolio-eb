@@ -1,0 +1,166 @@
+/* ===== HERO STYLES ===== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BACKGROUND IMAGE ===== */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* ===== HERO CONTENT ===== */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+.hero-text {
+  background: transparent;
+  padding: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== TITLE ===== */
+.hero-title {
+  font-size: 3.125rem; /* 50px */
+  font-weight: 400; /* Regular */
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+  letter-spacing: 0; /* Sin espacio adicional como en Canva */
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+}
+
+/* ===== SUBTITLE ===== */
+.hero-subtitle {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 300; /* Light */
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 0; /* 0% como en Canva */
+  opacity: 0.95;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+    min-height: 100vh;
+  }
+  
+  .hero-text {
+    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 0;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .hero-text {
+    padding: 0 1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-title {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* ===== FALLBACK STYLES (sin imagen) ===== */
+.hero:not(:has(.hero-background)) {
+  background-image: 
+    linear-gradient(45deg, #f7fafc 25%, transparent 25%), 
+    linear-gradient(-45deg, #f7fafc 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #f7fafc 75%), 
+    linear-gradient(-45deg, transparent 75%, #f7fafc 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+}
+
+.hero:not(:has(.hero-background)) .hero-title {
+  color: #0B2447;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero:not(:has(.hero-background)) .hero-subtitle {
+  color: #222222;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}

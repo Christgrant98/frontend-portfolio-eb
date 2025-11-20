@@ -1,0 +1,55 @@
+/* ===== HERO LOGO STYLES ===== */
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 0.2rem;
+  margin-top: -10rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.hero-logo-image {
+  width: 300px;
+  height: auto;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5));
+  transition: transform 0.3s ease;
+}
+
+.hero-logo-image:hover {
+  transform: scale(1.05);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .hero-logo-image {
+    width: 200px;
+  }
+  
+  .hero-logo {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-logo-image {
+    width: 150px;
+  }
+  
+  .hero-logo {
+    margin-bottom: 1rem;
+  }
+}
+

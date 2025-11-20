@@ -1,0 +1,41 @@
+.people-studio-portraits-page {
+  min-height: 100vh;
+}
+
+.people-studio-portraits-banner {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  z-index: -1;
+  margin-top: 5rem;
+}
+
+.people-studio-portraits-banner .title-page-card {
+  height: 100%;
+  border-radius: 0;
+}
+
+.people-studio-portraits-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .people-studio-portraits-banner {
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .people-studio-portraits-content {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .people-studio-portraits-banner {
+    height: 40vh;
+    min-height: 250px;
+  }
+}

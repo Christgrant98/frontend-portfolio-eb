@@ -1,0 +1,53 @@
+/* ===== PORTFOLIO PAGE STYLES ===== */
+
+.portfolio-page {
+  background-color: #000000;
+  min-height: 100vh;
+  padding-top: 5vh;
+  width: 100%;
+}
+
+/* ===== HEADER ===== */
+.portfolio-page-header {
+  padding: 4rem 2rem 2rem;
+  text-align: center;
+}
+
+.portfolio-page-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Override PortfolioSection background for this page */
+.portfolio-page .portfolio-section {
+  background: transparent;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .portfolio-page {
+    padding-top: 60px;
+  }
+  
+  .portfolio-page-header {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .portfolio-page-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-page-header {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .portfolio-page-title {
+    font-size: 2rem;
+  }
+}
+

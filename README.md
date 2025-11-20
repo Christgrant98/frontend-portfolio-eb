@@ -2,6 +2,36 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Development
+
+### Local Development
+```bash
+npm run dev
+```
+
+### LAN Access (View on iPhone/Mobile Devices)
+
+1. **Start the dev server with LAN access:**
+```bash
+npm run dev:lan
+```
+
+2. **Get your Mac's IP address:**
+```bash
+ipconfig getifaddr en0
+```
+
+3. **Open on your iPhone:**
+```
+http://<IP_DEL_MAC>:5173
+```
+
+**Example:** If your IP is `192.168.1.100`, open `http://192.168.1.100:5173` on your iPhone.
+
+**Note:** Make sure your Mac and iPhone are on the same Wi-Fi network.
+
+## Plugins
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh

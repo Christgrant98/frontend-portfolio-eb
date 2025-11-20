@@ -1,34 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import './fonts.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { AppProvider } from './core/contexts/AppContext'
+import TopBar from './core/common/ui/components/TopBar'
+import HomePage from './features/home/ui/pages/HomePage'
+import AboutUsPage from './features/about_us/ui/pages/AboutUsPage'
+import ServicesPage from './features/services/ui/pages/ServicesPage'
+import PortfolioPage from './features/portfolio/ui/pages/PortfolioPage'
+import Footer from './core/common/ui/components/Footer'
+import WeddingPage from './features/services/ui/pages/WeddingPage'
+import PeopleStudioPortraitsPage from './features/services/ui/pages/PeopleStudioPortraitsPage'
+import ProductPhotographyPage from './features/services/ui/pages/ProductPhotographyPage'
+  
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AppProvider>
+      <Router>
+        <div className="App">
+          <TopBar title="PHARUS PHOTOGRAPHY" />
+          
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/services/weddings" element={<WeddingPage />} />
+            <Route path="/people-studio-portraits" element={<PeopleStudioPortraitsPage />} />
+            <Route path="/product-photography" element={<ProductPhotographyPage />} />
+          </Routes>
+          
+          <Footer 
+            title="PHARUS PHOTOGRAPHY"
+            showSocialIcons={true}
+          />
+        </div>
+      </Router>
+    </AppProvider>
   )
 }
 

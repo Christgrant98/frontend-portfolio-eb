@@ -1,0 +1,45 @@
+.portfolio-section {
+  padding: 6rem 0;
+  background: transparent;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.portfolio-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.portfolio-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 4rem 0;
+  }
+  
+  .portfolio-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-section {
+    padding: 3rem 0;
+  }
+  
+  .portfolio-container {
+    padding: 0 1rem;
+  }
+}

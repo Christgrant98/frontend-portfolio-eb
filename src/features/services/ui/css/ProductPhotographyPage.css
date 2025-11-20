@@ -1,0 +1,30 @@
+.product-photography-page {
+  min-height: 100vh;
+}
+
+.product-photography-banner {
+  min-height: 400px;
+  position: relative;
+  margin-top: 5rem;
+}
+
+.product-photography-content {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .product-photography-banner {
+    min-height: 300px;
+  }
+
+  .product-photography-content {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+}

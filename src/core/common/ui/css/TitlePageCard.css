@@ -1,0 +1,72 @@
+.title-page-card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card-title {
+  color: #FFFFFF;
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: opacity 0.3s ease;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .title-page-card {
+    height: 300px;
+  }
+  
+  .card-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-page-card {
+    height: 250px;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

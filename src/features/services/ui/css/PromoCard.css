@@ -1,0 +1,139 @@
+.promo-card {
+  width: 100%;
+  height: 600px;
+  background-color: #ffffff;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.promo-inner-container {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  box-sizing: border-box;
+  min-height: 500px;
+  position: relative;
+}
+
+.promo-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-right: 2rem;
+}
+
+.promo-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #000000;
+  margin: 0;
+}
+
+.promo-description {
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #000000;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.promo-items {
+  font-weight: 300;
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+  font-size: 1.5rem;
+}
+
+.promo-items li {
+  text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.promo-items li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #000000;
+  font-weight: bold;
+}
+
+.promo-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.promo-price-item {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #000000;
+  margin: 0;
+}
+
+.promo-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+  padding: 12px 32px;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.promo-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+}
+
+.promo-image-container {
+  margin-top: 150px;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.promo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Even cards - text first, image second (default order) */
+.promo-card-even {
+  flex-direction: row;
+}
+
+/* Odd cards - image first, text second */
+.promo-card-odd {
+  flex-direction: row-reverse;
+}
+
