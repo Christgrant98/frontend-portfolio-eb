@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
-//
+// commit vacio
 // https://vite.dev/config/
 export default defineConfig({
   base: '/', // GitHub Pages base path para EliasBarr.github.io (sitio de usuario)
