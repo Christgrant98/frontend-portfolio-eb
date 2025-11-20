@@ -1,8 +1,13 @@
 import React from 'react';
 import '../css/ContactSection.css';
 import { Button } from '../../../../core/common/ui/components';
+import { SOCIAL_LINKS } from '../../../../core/constants/contactInfo';
 
 const ContactSection: React.FC = () => {
+  const handleContactClick = () => {
+    window.open(SOCIAL_LINKS.whatsapp, '_blank');
+  };
+
   return (
     <div className="contact-section">
       <div className="contact-content">
@@ -11,7 +16,7 @@ const ContactSection: React.FC = () => {
         </p>
         <Button 
             text="Contact Me"
-            onClick={() => {}}
+            onClick={handleContactClick}
             variant="tertiary"
             className="section-button"
           />
