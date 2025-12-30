@@ -25,12 +25,9 @@ const TopBar: React.FC<TopBarProps> = ({
   return (
     <header className={`topbar ${isScrolled ? 'scrolled' : ''} ${!isHero ? 'not-hero' : ''} ${isPortfolioPage ? 'portfolio-mode' : ''}`}>
       <div className="topbar-container">
-        {/* Logo/Título - Oculto */}
         <div className="topbar-brand">
-          {/* <h1 className="topbar-title font-heading">{title}</h1> */}
         </div>
 
-        {/* Navegación con Playfair Display */}
         {showNavigation && (
           <>
             <nav className="topbar-nav">
@@ -43,7 +40,6 @@ const TopBar: React.FC<TopBarProps> = ({
               </ul>
             </nav>
 
-            {/* Botón Hamburguesa */}
             <button 
               className="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -54,7 +50,6 @@ const TopBar: React.FC<TopBarProps> = ({
               <span className={`hamburger-line ${isMobileMenuOpen ? 'active' : ''}`}></span>
             </button>
 
-            {/* Menú Móvil */}
             <nav className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
               <ul className="mobile-nav-list">
                 <li><Link to="/" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
@@ -67,7 +62,6 @@ const TopBar: React.FC<TopBarProps> = ({
           </>
         )}
 
-        {/* Iconos Sociales */}
         {showSocialIcons && (
           <div className="topbar-social">
             <a href={SOCIAL_LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">

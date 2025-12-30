@@ -18,7 +18,7 @@ function App() {
       <Router>
         <div className="App">
           <TopBar title="PHARUS PHOTOGRAPHY" />
-          
+
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutUsPage />} />
