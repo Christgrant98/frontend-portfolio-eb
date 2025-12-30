@@ -1,7 +1,7 @@
 import React from 'react';
 import { TitlePageCard } from '../../../../core/common/ui/components';
 import '../css/WeddingPage.css';
-import PromoCard from '../components/PromoCard';
+import PackagesSection from '../components/PackagesSection';
 import ContactSection from '../components/ContactSection';
 import { weddingPackages } from '../../constants/weddingPackages';
 import weddingBanner from '../../../../assets/wedding_banner_page.png'; 
@@ -18,13 +18,7 @@ const WeddingPage: React.FC = () => {
       </div>
       
       <div className="wedding-content">
-        {weddingPackages.map((packageData, index) => (
-          <PromoCard
-            key={index}
-            data={packageData}
-            isEven={index % 2 === 0}
-          />
-        ))}
+        <PackagesSection packages={weddingPackages} />
       </div>
       
       <ContactSection />
