@@ -3,17 +3,20 @@ import { Link, useLocation } from 'react-router-dom';
 import { useScrollEffect } from '../../hooks/useScrollEffect';
 import { useApp } from '../../../contexts/AppContext';
 import { SOCIAL_LINKS } from '../../../constants/contactInfo';
+import pharusLogoBlack from '../../../../assets/pharus_logo_black.png';
 import '../css/TopBar.css';
 
 interface TopBarProps {
   title?: string;
   showNavigation?: boolean;
   showSocialIcons?: boolean;
+  showBrand?: boolean;
 }
 
 const TopBar: React.FC<TopBarProps> = ({ 
   showNavigation = true, 
-  showSocialIcons = true 
+  showSocialIcons = true,
+  showBrand = true
 }) => {
   const isScrolled = useScrollEffect();
   const { isHero } = useApp();
@@ -25,8 +28,15 @@ const TopBar: React.FC<TopBarProps> = ({
   return (
     <header className={`topbar ${isScrolled ? 'scrolled' : ''} ${!isHero ? 'not-hero' : ''} ${isPortfolioPage ? 'portfolio-mode' : ''}`}>
       <div className="topbar-container">
-        <div className="topbar-brand">
-        </div>
+        {showBrand && (
+          <Link to="/" className="topbar-brand">
+            <img src={pharusLogoBlack} alt="Pharus Creative Logo" className="topbar-logo" />
+            <div className="topbar-brand-text">
+              <h1 className="topbar-brand-title">PHARUS CREATIVE</h1>
+              <p className="topbar-brand-subtitle">Histoires d'amour illuminées par l'art</p>
+            </div>
+          </Link>
+        )}
 
         {showNavigation && (
           <>

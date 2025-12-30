@@ -1,6 +1,6 @@
 import './App.css'
 import './fonts.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AppProvider } from './core/contexts/AppContext'
 import TopBar from './core/common/ui/components/TopBar'
 import HomePage from './features/home/ui/pages/HomePage'
@@ -11,13 +11,14 @@ import Footer from './core/common/ui/components/Footer'
 import WeddingPage from './features/services/ui/pages/WeddingPage'
 import PeopleStudioPortraitsPage from './features/services/ui/pages/PeopleStudioPortraitsPage'
 import ProductPhotographyPage from './features/services/ui/pages/ProductPhotographyPage'
-  
-function App() {
+
+function AppContent() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
-    <AppProvider>
-      <Router>
-        <div className="App">
-          <TopBar title="PHARUS PHOTOGRAPHY" />
+    <div className="App">
+      <TopBar title="PHARUS PHOTOGRAPHY" showBrand={!isHomePage} />
 
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -29,11 +30,19 @@ function App() {
             <Route path="/product-photography" element={<ProductPhotographyPage />} />
           </Routes>
           
-          <Footer 
-            title="PHARUS PHOTOGRAPHY"
-            showSocialIcons={true}
-          />
-        </div>
+      <Footer 
+        title="PHARUS PHOTOGRAPHY"
+        showSocialIcons={true}
+      />
+    </div>
+  );
+}
+  
+function App() {
+  return (
+    <AppProvider>
+      <Router>
+        <AppContent />
       </Router>
     </AppProvider>
   )
