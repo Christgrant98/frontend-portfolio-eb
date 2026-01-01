@@ -20,7 +20,7 @@ const LetsContact: React.FC<LetsContactProps> = ({
 }) => {
   return (
     <section className="lets-contact">
-      {/* Imagen de fondo */}
+
       {imageUrl && (
         <div className="contact-background">
           <img 
@@ -31,7 +31,6 @@ const LetsContact: React.FC<LetsContactProps> = ({
         </div>
       )}
       
-      {/* Contenido centrado */}
       <div className="contact-content">
         <div className="contact-text-container">
           <h2 className="contact-title font-heading">{title}</h2>
@@ -41,6 +40,7 @@ const LetsContact: React.FC<LetsContactProps> = ({
             onClick={onButtonClick}
             variant="primary"
             className="section-button"
+            noBorder
           />
         </div>
       </div>
