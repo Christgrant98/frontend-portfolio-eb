@@ -21,6 +21,23 @@
   padding: 4rem 2rem;
 }
 
+.events-description {
+  text-align: center;
+
+}
+
+.events-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .events-banner {
@@ -31,12 +48,24 @@
   .events-content {
     padding: 2rem 1rem;
   }
+
+  .events-description {
+    padding: 2rem 1rem;
+  }
+
+  .events-subtitle {
+    font-size: 1.75rem;
+  }
 }
 
 @media (max-width: 480px) {
   .events-banner {
     height: 40vh;
     min-height: 250px;
+  }
+
+  .events-subtitle {
+    font-size: 1.5rem;
   }
 }
 

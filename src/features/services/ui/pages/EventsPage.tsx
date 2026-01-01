@@ -16,9 +16,12 @@ const EventsPage: React.FC = () => {
       </div>
       
       <div className="events-content">
-        <div style={{ padding: '4rem 2rem', textAlign: 'center' }}>
-          <h2>Coming Soon</h2>
-          <p>Events packages will be available soon.</p>
+        <div className="events-description">
+          <h2 className="events-subtitle font-heading">
+            Every event has its own energy, rhythm, and story.
+            <br />
+            I document real moments as they happen — from intimate gatherings to large-scale celebrations.
+          </h2>
         </div>
       </div>
       <ContactSection />
