@@ -33,16 +33,20 @@
   z-index: 2;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-left: 6rem;
+  padding-bottom: 4rem;
 }
 
 .event-contact-text-container {
-  text-align: center;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 2rem;
+  max-width: 650px;
+  margin-top: 18rem;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -65,6 +69,11 @@
   .event-contact {
     height: 500px;
   }
+
+  .event-contact-content {
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+  }
   
   .event-contact-title {
     font-size: 2.25rem;
@@ -76,6 +85,11 @@
     height: 400px;
     padding: 0 1.5rem;
   }
+
+  .event-contact-content {
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+  }
   
   .event-contact-title {
     font-size: 1.75rem;
@@ -83,5 +97,6 @@
 
   .event-contact-text-container {
     gap: 1.5rem;
+    margin-top: 6rem;
   }
 }
