@@ -20,7 +20,6 @@ const PeopleStudioPortraitsPage: React.FC = () => {
       <div className="people-studio-portraits-content">
         <PackagesSection packages={peopleStudioPortraitsPackages} />
       </div>
-      
       <ContactSection />
     </div>
   );

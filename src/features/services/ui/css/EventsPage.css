@@ -1,0 +1,42 @@
+.events-page {
+  min-height: 100vh;
+}
+
+.events-banner {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  z-index: -1;
+  margin-top: 5rem;
+}
+
+.events-banner .title-page-card {
+  height: 100%;
+  border-radius: 0;
+}
+
+.events-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .events-banner {
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .events-content {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-banner {
+    height: 40vh;
+    min-height: 250px;
+  }
+}
+

@@ -11,6 +11,7 @@ import Footer from './core/common/ui/components/Footer'
 import WeddingPage from './features/services/ui/pages/WeddingPage'
 import PeopleStudioPortraitsPage from './features/services/ui/pages/PeopleStudioPortraitsPage'
 import ProductPhotographyPage from './features/services/ui/pages/ProductPhotographyPage'
+import EventsPage from './features/services/ui/pages/EventsPage'
 
 function AppContent() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function AppContent() {
             <Route path="/services/weddings" element={<WeddingPage />} />
             <Route path="/people-studio-portraits" element={<PeopleStudioPortraitsPage />} />
             <Route path="/product-photography" element={<ProductPhotographyPage />} />
+            <Route path="/events" element={<EventsPage />} />
           </Routes>
           
       <Footer 
