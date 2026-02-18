@@ -26,13 +26,15 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ isPreview }) => {
 
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxOrigin, setLightboxOrigin] = useState<{ x: number; y: number } | null>(null);
 
   const handleViewPortfolio = () => {
     navigate('/portfolio');
   };
 
-  const openLightbox = (index: number) => {
+  const openLightbox = (index: number, e?: React.MouseEvent) => {
     setLightboxIndex(index);
+    setLightboxOrigin(e ? { x: e.clientX, y: e.clientY } : null);
     setLightboxOpen(true);
   };
 
@@ -56,7 +58,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ isPreview }) => {
                   item={item}
                   isPreview={isPreview}
                   isMobile={isMobile}
-                  onClick={() => openLightbox(index)}
+                  onClick={(e) => openLightbox(index, e)}
                 />
               </ImageListItem>
             ))}
@@ -68,6 +70,7 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ isPreview }) => {
             <PortfolioLightbox
               items={displayData}
               currentIndex={lightboxIndex}
+              origin={lightboxOrigin}
               onClose={closeLightbox}
               onNavigate={handleLightboxNavigate}
             />,

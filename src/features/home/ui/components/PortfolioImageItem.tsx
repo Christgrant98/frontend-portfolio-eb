@@ -6,7 +6,7 @@ interface PortfolioImageItemProps {
   item: PortfolioItem;
   isPreview: boolean;
   isMobile: boolean;
-  onClick: () => void;
+  onClick: (e?: React.MouseEvent) => void;
 }
 
 const PortfolioImageItem: React.FC<PortfolioImageItemProps> = ({
@@ -27,7 +27,7 @@ const PortfolioImageItem: React.FC<PortfolioImageItemProps> = ({
       className="portfolio-image-item"
       role="button"
       tabIndex={0}
-      onClick={onClick}
+      onClick={(e) => onClick(e)}
       onKeyDown={handleKeyDown}
       aria-label={`Ver imagen: ${item.title}`}
     >
