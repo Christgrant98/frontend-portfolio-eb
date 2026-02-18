@@ -8,14 +8,18 @@ import pharusLogoWhite from '../../../../assets/pharus_creative_logo.png';
 interface FooterProps {
   title?: string;
   showSocialIcons?: boolean;
+  /** When set (e.g. from Astro), use this path for layout classes instead of useLocation */
+  pathname?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ 
+const Footer: React.FC<FooterProps> = ({
   title = "PHARUS CREATIVE",
-  showSocialIcons = true
+  showSocialIcons = true,
+  pathname: pathnameProp
 }) => {
   const location = useLocation();
-  const isPortfolioPage = location.pathname === '/portfolio';
+  const currentPath = pathnameProp ?? location.pathname;
+  const isPortfolioPage = currentPath === '/portfolio';
   const pharusLogo = isPortfolioPage ? pharusLogoWhite : pharusLogoBlack;
 
   return (

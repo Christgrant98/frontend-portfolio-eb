@@ -15,8 +15,8 @@ Plan gradual y seguro. El sitio actual (Vite) sigue estable hasta el cambio fina
 
 2. **Integraciones en Astro**
    - **React** (`@astrojs/react`): para usar componentes React existentes como islas.
-   - **Tailwind** (`@tailwindcss/vite` + `tailwindcss` v4): mismo ecosistema que el proyecto Vite.
-   - Comandos: `npx astro add react --yes` y `npx astro add tailwind --yes`.
+   - **Tailwind** (`@astrojs/tailwind` + `tailwindcss` v3): en Astro se usa v3 por compatibilidad con Vite 6; el proyecto Vite sigue con Tailwind v4.
+   - Comandos: `npx astro add react --yes` y `npm install @astrojs/tailwind tailwindcss`.
 
 3. **Workspaces en root**
    - En `package.json` del repo: `"workspaces": ["astro"]`.
@@ -60,13 +60,53 @@ portfolio-eb/
 ### Notas
 
 - **React**: Astro instaló React 19 en `astro/`. El proyecto Vite sigue en React 18. Al reutilizar componentes en Astro, si aparece incompatibilidad, se puede fijar React 18 en `astro/package.json`.
-- **Tailwind**: Astro usa Tailwind v4 (igual que el proyecto actual). Los estilos globales de Astro están en `astro/src/styles/global.css`; hay que importarlos en el layout cuando exista.
+- **Tailwind**: Astro usa `@astrojs/tailwind` (Tailwind v3) por compatibilidad. Los estilos globales se importan en `Layout.astro` (global.css + `@/fonts.css`, `@/index.css`, `@/App.css`).
+
+---
+
+## Paso 1 — Layout + Home (completado)
+
+### Cambios realizados
+
+1. **Alias `@` en Astro**  
+   En `astro.config.mjs`: `resolve.alias['@'] = '../src'` para importar código y estilos del proyecto compartido.
+
+2. **TopBar y Footer compatibles con Astro**  
+   - Nueva prop opcional `pathname?: string`.  
+   - Cuando `pathname` está definida (desde Astro), se usan `<a href="...">` en lugar de `<Link to="...">` para que la navegación sea por rutas reales.  
+   - Sin `pathname`, se mantiene el comportamiento con React Router (Vite).
+
+3. **LayoutShell** (`src/core/layouts/LayoutShell.tsx`)  
+   - Envuelve AppProvider + TopBar + contenido + Footer.  
+   - Si recibe `pathname`, envuelve todo en `MemoryRouter` para que `useLocation()` y `useScrollEffect()` sigan funcionando.  
+   - Prop `page?: 'home'` para que la página se renderice dentro del shell (y dentro de AppProvider), evitando errores de contexto en el pre-render de Astro.
+
+4. **Layout.astro**  
+   - Importa estilos globales (Tailwind, fonts, index, App).  
+   - Estructura HTML base y `<slot />` para el contenido.
+
+5. **index.astro (Home)**  
+   - Usa `<LayoutShell pathname={Astro.url.pathname} page="home" client:only="react" />`.  
+   - `client:only` evita que Astro pre-renderice el árbol React (que depende de AppProvider).
+
+6. **Tailwind en Astro**  
+   - Sustituido `@tailwindcss/vite` (v4) por `@astrojs/tailwind` (v3) por conflicto con Vite 6.  
+   - Añadido `tailwind.config.cjs` con `content` que incluye `../src/**/*` para las clases del código compartido.
+
+### Cómo probar
+
+- `npm run dev:astro` → abrir `http://localhost:4321` y comprobar Home con TopBar, Hero, secciones y Footer.  
+- `npm run build:astro` → build correcto.  
+- `npm run dev` y `npm run build` (Vite) siguen funcionando sin cambios.
+
+### Favicon en Astro
+
+Si quieres el mismo favicon que en Vite, copia `public/pharus-logo.png` (o el que uses) a `astro/public/pharus-logo.png`. El layout ya referencia `/pharus-logo.png`.
 
 ---
 
 ## Próximos pasos
 
-1. **Paso 1**: Layout base Astro (TopBar + slot + Footer) y página Home.
-2. **Paso 2**: About, Services, Portfolio.
+1. **Paso 2**: About, Services, Portfolio.
 3. **Paso 3**: Subpáginas de servicios (Wedding, Events, etc.).
 4. **Paso 4**: Deploy y corte final (GitHub Pages sirviendo build de Astro).

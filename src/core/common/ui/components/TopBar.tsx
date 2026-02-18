@@ -11,42 +11,67 @@ interface TopBarProps {
   showNavigation?: boolean;
   showSocialIcons?: boolean;
   showBrand?: boolean;
+  /** When set (e.g. from Astro), use static <a> for navigation and this path for layout classes */
+  pathname?: string;
 }
 
-const TopBar: React.FC<TopBarProps> = ({ 
-  showNavigation = true, 
+const TopBar: React.FC<TopBarProps> = ({
+  showNavigation = true,
   showSocialIcons = true,
-  showBrand = true
+  showBrand = true,
+  pathname: pathnameProp
 }) => {
   const isScrolled = useScrollEffect();
   const { isHero } = useApp();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
-  const isPortfolioPage = location.pathname === '/portfolio';
+
+  const currentPath = pathnameProp ?? location.pathname;
+  const isPortfolioPage = currentPath === '/portfolio';
+  const useStaticLinks = pathnameProp !== undefined;
 
   return (
     <header className={`topbar ${isScrolled ? 'scrolled' : ''} ${!isHero ? 'not-hero' : ''} ${isPortfolioPage ? 'portfolio-mode' : ''}`}>
       <div className="topbar-container">
         {showBrand && (
-          <Link to="/" className="topbar-brand">
-            <img src={pharusLogoBlack} alt="Pharus Creative Logo" className="topbar-logo" />
-            <div className="topbar-brand-text">
-              <h1 className="topbar-brand-title">PHARUS CREATIVE</h1>
-              <p className="topbar-brand-subtitle">Histoires d'amour illuminées par l'art</p>
-            </div>
-          </Link>
+          useStaticLinks ? (
+            <a href="/" className="topbar-brand">
+              <img src={pharusLogoBlack} alt="Pharus Creative Logo" className="topbar-logo" />
+              <div className="topbar-brand-text">
+                <h1 className="topbar-brand-title">PHARUS CREATIVE</h1>
+                <p className="topbar-brand-subtitle">Histoires d'amour illuminées par l'art</p>
+              </div>
+            </a>
+          ) : (
+            <Link to="/" className="topbar-brand">
+              <img src={pharusLogoBlack} alt="Pharus Creative Logo" className="topbar-logo" />
+              <div className="topbar-brand-text">
+                <h1 className="topbar-brand-title">PHARUS CREATIVE</h1>
+                <p className="topbar-brand-subtitle">Histoires d'amour illuminées par l'art</p>
+              </div>
+            </Link>
+          )
         )}
 
         {showNavigation && (
           <>
             <nav className="topbar-nav">
               <ul className="nav-list">
-                <li><Link to="/" className="nav-link font-heading">Home</Link></li>
-                <li><Link to="/about" className="nav-link font-heading">About Us</Link></li>
-                <li><Link to="/services" className="nav-link font-heading">Services</Link></li> 
-                <li><Link to="/portfolio" className="nav-link font-heading">Portfolio</Link></li>
-                {/* <li><a href="#contact" className="nav-link font-heading">Contact</a></li> */}
+                {useStaticLinks ? (
+                  <>
+                    <li><a href="/" className="nav-link font-heading">Home</a></li>
+                    <li><a href="/about" className="nav-link font-heading">About Us</a></li>
+                    <li><a href="/services" className="nav-link font-heading">Services</a></li>
+                    <li><a href="/portfolio" className="nav-link font-heading">Portfolio</a></li>
+                  </>
+                ) : (
+                  <>
+                    <li><Link to="/" className="nav-link font-heading">Home</Link></li>
+                    <li><Link to="/about" className="nav-link font-heading">About Us</Link></li>
+                    <li><Link to="/services" className="nav-link font-heading">Services</Link></li>
+                    <li><Link to="/portfolio" className="nav-link font-heading">Portfolio</Link></li>
+                  </>
+                )}
               </ul>
             </nav>
 
@@ -62,11 +87,21 @@ const TopBar: React.FC<TopBarProps> = ({
 
             <nav className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
               <ul className="mobile-nav-list">
-                <li><Link to="/" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-                <li><Link to="/about" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
-                <li><Link to="/services" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
-                <li><Link to="/portfolio" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link></li>
-                {/* <li><a href="#contact" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li> */}
+                {useStaticLinks ? (
+                  <>
+                    <li><a href="/" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Home</a></li>
+                    <li><a href="/about" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>About Us</a></li>
+                    <li><a href="/services" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Services</a></li>
+                    <li><a href="/portfolio" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</a></li>
+                  </>
+                ) : (
+                  <>
+                    <li><Link to="/" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+                    <li><Link to="/about" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
+                    <li><Link to="/services" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
+                    <li><Link to="/portfolio" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link></li>
+                  </>
+                )}
               </ul>
             </nav>
           </>
