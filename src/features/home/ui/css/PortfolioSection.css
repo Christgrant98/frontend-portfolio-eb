@@ -17,6 +17,31 @@
   image-rendering: -webkit-optimize-contrast;
 }
 
+/* Reserve space on portfolio page to reduce layout shift while images load (or from cache) */
+.portfolio-section .portfolio-image-wrap {
+  min-height: 200px;
+  background: #0a0a0a;
+  display: block;
+}
+
+.portfolio-section .portfolio-image-wrap img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* Keep masonry items fluid so images keep natural aspect ratio (fixes mobile squashing) */
+.portfolio-section .MuiImageListItem-root {
+  break-inside: avoid;
+  overflow: hidden;
+}
+
+.portfolio-section .MuiImageListItem-root img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .portfolio-button-container {
   display: flex;
   justify-content: center;
@@ -31,6 +56,11 @@
   
   .portfolio-container {
     padding: 0 1.5rem;
+  }
+
+  /* Single column: let image height define cell; avoid squashing */
+  .portfolio-section .portfolio-image-wrap {
+    min-height: 120px;
   }
 }
 

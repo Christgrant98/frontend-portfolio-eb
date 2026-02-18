@@ -8,6 +8,7 @@ import { SOCIAL_LINKS } from '../../../../core/constants/contactInfo';
 import homeBanner from '../../../../assets/home_banner.png';
 import weddingImg from '../../../../assets/wedding_img.png';
 import contactBg from '../../../../assets/contact_me_bg.png'; 
+import { APP_CONSTANTS } from '../../../../core/constants/appConstants';
 
 
 
@@ -29,7 +30,7 @@ const HomePage: React.FC = () => {
   return (
     <main>
       <Hero 
-        title="PHARUS PHOTOGRAPHY"
+        title={APP_CONSTANTS.title}
         subtitle="Histoires d'amour illuminées par l'art"
         imageUrl={homeBanner}
         imageAlt="Pikachu surfing - Test image"

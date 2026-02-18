@@ -4,6 +4,7 @@ import '../css/Footer.css';
 import { SOCIAL_LINKS } from '../../../constants/contactInfo';
 import pharusLogoBlack from '../../../../assets/pharus_logo_black.png';
 import pharusLogoWhite from '../../../../assets/pharus_creative_logo.png';
+import { APP_CONSTANTS } from '../../../constants/appConstants';
 
 interface FooterProps {
   title?: string;
@@ -11,7 +12,7 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ 
-  title = "PHARUS CREATIVE",
+  title = APP_CONSTANTS.title,
   showSocialIcons = true
 }) => {
   const location = useLocation();

@@ -1,5 +1,6 @@
 import './App.css'
 import './fonts.css'
+import { useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AppProvider } from './core/contexts/AppContext'
 import TopBar from './core/common/ui/components/TopBar'
@@ -12,14 +13,34 @@ import WeddingPage from './features/services/ui/pages/WeddingPage'
 import PeopleStudioPortraitsPage from './features/services/ui/pages/PeopleStudioPortraitsPage'
 import ProductPhotographyPage from './features/services/ui/pages/ProductPhotographyPage'
 import EventsPage from './features/services/ui/pages/EventsPage'
+import { APP_CONSTANTS } from './core/constants/appConstants'
+import { preloadPortfolioImages } from './core/utils/preloadPortfolioImages'
+import { PORTFOLIO_DATA } from './features/home/constants/portfolioData'
+
+function preloadPortfolio(): void {
+  preloadPortfolioImages(PORTFOLIO_DATA.map((item) => item.img))
+}
 
 function AppContent() {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
+  useEffect(() => {
+    const handle = window.requestIdleCallback
+      ? window.requestIdleCallback(() => preloadPortfolio(), { timeout: 2000 })
+      : window.setTimeout(preloadPortfolio, 300);
+    return () => {
+      if (window.cancelIdleCallback) {
+        window.cancelIdleCallback(handle as number);
+      } else {
+        window.clearTimeout(handle as number);
+      }
+    };
+  }, []);
+
   return (
     <div className="App">
-      <TopBar title="PHARUS PHOTOGRAPHY" showBrand={!isHomePage} />
+      <TopBar title={APP_CONSTANTS.title} showBrand={!isHomePage} onPortfolioLinkHover={preloadPortfolio} />
 
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -33,7 +54,7 @@ function AppContent() {
           </Routes>
           
       <Footer 
-        title="PHARUS PHOTOGRAPHY"
+        title={APP_CONSTANTS.title}
         showSocialIcons={true}
       />
     </div>

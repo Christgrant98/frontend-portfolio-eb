@@ -1,0 +1,21 @@
+/* Clickable portfolio image tile */
+.portfolio-image-item {
+  cursor: pointer;
+  display: block;
+  outline: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portfolio-image-item:hover {
+  transform: scale(1.02);
+}
+
+.portfolio-image-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.portfolio-image-item .portfolio-image-wrap,
+.portfolio-image-item img {
+  pointer-events: none;
+}
