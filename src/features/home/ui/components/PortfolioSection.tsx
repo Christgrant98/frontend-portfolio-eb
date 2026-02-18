@@ -28,17 +28,19 @@ const PortfolioSection: React.FC<PortfolioSectionProps> = ({ isPreview }) => {
           <ImageList variant="masonry" cols={3} gap={8}>
             {displayData.map((item) => (
               <ImageListItem key={item.img}>
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  loading="lazy"
-                  style={{
-                    maxWidth: '100%',
-                    height: 'auto',
-                    imageRendering: 'auto',
-                    objectFit: 'cover',
-                  }}
-                />
+                <div className={isPreview ? undefined : 'portfolio-image-wrap'}>
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    loading={isPreview ? 'lazy' : 'eager'}
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                      imageRendering: 'auto',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </div>
               </ImageListItem>
             ))}
           </ImageList>

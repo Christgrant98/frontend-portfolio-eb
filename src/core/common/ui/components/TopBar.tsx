@@ -11,12 +11,14 @@ interface TopBarProps {
   showNavigation?: boolean;
   showSocialIcons?: boolean;
   showBrand?: boolean;
+  onPortfolioLinkHover?: () => void;
 }
 
 const TopBar: React.FC<TopBarProps> = ({ 
   showNavigation = true, 
   showSocialIcons = true,
-  showBrand = true
+  showBrand = true,
+  onPortfolioLinkHover
 }) => {
   const isScrolled = useScrollEffect();
   const { isHero } = useApp();
@@ -45,7 +47,7 @@ const TopBar: React.FC<TopBarProps> = ({
                 <li><Link to="/" className="nav-link font-heading">Home</Link></li>
                 <li><Link to="/about" className="nav-link font-heading">About Me</Link></li>
                 <li><Link to="/services" className="nav-link font-heading">Services</Link></li> 
-                <li><Link to="/portfolio" className="nav-link font-heading">Portfolio</Link></li>
+                <li><Link to="/portfolio" className="nav-link font-heading" onMouseEnter={onPortfolioLinkHover}>Portfolio</Link></li>
                 {/* <li><a href="#contact" className="nav-link font-heading">Contact</a></li> */}
               </ul>
             </nav>
@@ -65,7 +67,7 @@ const TopBar: React.FC<TopBarProps> = ({
                 <li><Link to="/" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
                 <li><Link to="/about" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>About Me</Link></li>
                 <li><Link to="/services" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
-                <li><Link to="/portfolio" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Portfolio</Link></li>
+                <li><Link to="/portfolio" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)} onMouseEnter={onPortfolioLinkHover}>Portfolio</Link></li>
                 {/* <li><a href="#contact" className="mobile-nav-link font-heading" onClick={() => setIsMobileMenuOpen(false)}>Contact</a></li> */}
               </ul>
             </nav>
