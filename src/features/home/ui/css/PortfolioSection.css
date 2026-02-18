@@ -29,6 +29,18 @@
   vertical-align: middle;
 }
 
+/* Keep masonry items fluid so images keep natural aspect ratio (fixes mobile squashing) */
+.portfolio-section .MuiImageListItem-root {
+  break-inside: avoid;
+}
+
+.portfolio-section .MuiImageListItem-root img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .portfolio-button-container {
   display: flex;
   justify-content: center;
@@ -43,6 +55,11 @@
   
   .portfolio-container {
     padding: 0 1.5rem;
+  }
+
+  /* Single column: let image height define cell; avoid squashing */
+  .portfolio-section .portfolio-image-wrap {
+    min-height: 120px;
   }
 }
 
