@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LayoutShell from '@/core/layouts/LayoutShell';
+---
+
+<Layout title="About Us - Pharus Creative" description="Pharus Creative is a studio specializing in photography, video production, content creation, and digital marketing. We illuminate emotion, build identity, and leave a mark. Based in Montreal.">
+  <LayoutShell pathname={Astro.url.pathname} page="about" client:only="react" />
+</Layout>

@@ -79,7 +79,7 @@ portfolio-eb/
 3. **LayoutShell** (`src/core/layouts/LayoutShell.tsx`)  
    - Envuelve AppProvider + TopBar + contenido + Footer.  
    - Si recibe `pathname`, envuelve todo en `MemoryRouter` para que `useLocation()` y `useScrollEffect()` sigan funcionando.  
-   - Prop `page?: 'home'` para que la página se renderice dentro del shell (y dentro de AppProvider), evitando errores de contexto en el pre-render de Astro.
+   - Prop `page?: 'home' | 'about'` para que la página se renderice dentro del shell (y dentro de AppProvider), evitando errores de contexto en el pre-render de Astro.
 
 4. **Layout.astro**  
    - Importa estilos globales (Tailwind, fonts, index, App).  
@@ -105,8 +105,28 @@ Si quieres el mismo favicon que en Vite, copia `public/pharus-logo.png` (o el qu
 
 ---
 
+## Paso 2 (parcial) — About Us (completado)
+
+### Cambios realizados
+
+1. **LayoutShell**  
+   - Tipo `LayoutShellPage` ampliado a `'home' | 'about'`.  
+   - Import de `AboutUsPage` y render condicional `page === 'about' ? <AboutUsPage />`.
+
+2. **about.astro** (`astro/src/pages/about.astro`)  
+   - Usa `<Layout>` con título y descripción para SEO.  
+   - `<LayoutShell pathname={Astro.url.pathname} page="about" client:only="react" />`.  
+   - Ruta resultante: `/about` (Astro genera `about/index.html`).
+
+### Cómo probar
+
+- `npm run dev:astro` → `http://localhost:4321/about`.  
+- Desde Home, clic en "About Us" en la TopBar debe llevar a `/about`.
+
+---
+
 ## Próximos pasos
 
-1. **Paso 2**: About, Services, Portfolio.
-3. **Paso 3**: Subpáginas de servicios (Wedding, Events, etc.).
-4. **Paso 4**: Deploy y corte final (GitHub Pages sirviendo build de Astro).
+1. **Paso 2 (resto)**: Services, Portfolio.
+2. **Paso 3**: Subpáginas de servicios (Wedding, Events, etc.).
+3. **Paso 4**: Deploy y corte final (GitHub Pages sirviendo build de Astro).

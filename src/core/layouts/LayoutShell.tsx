@@ -4,9 +4,10 @@ import { AppProvider } from '../contexts/AppContext';
 import TopBar from '../common/ui/components/TopBar';
 import Footer from '../common/ui/components/Footer';
 import HomePage from '../../features/home/ui/pages/HomePage';
+import AboutUsPage from '../../features/about_us/ui/pages/AboutUsPage';
 
 /** Page key for Astro: LayoutShell renders the page internally so it stays inside AppProvider (no slot SSR). */
-export type LayoutShellPage = 'home';
+export type LayoutShellPage = 'home' | 'about';
 
 interface LayoutShellProps {
   /** Current path (e.g. from Astro.url.pathname). When set, wraps in MemoryRouter and uses static <a> nav. */
@@ -26,7 +27,7 @@ export default function LayoutShell({ pathname, page, children }: LayoutShellPro
     <AppProvider>
       <TopBar showBrand={pathname !== '/'} pathname={pathname} />
       <div className="layout-content">
-        {page === 'home' ? <HomePage /> : children}
+        {page === 'home' ? <HomePage /> : page === 'about' ? <AboutUsPage /> : children}
       </div>
       <Footer title="PHARUS PHOTOGRAPHY" showSocialIcons pathname={pathname} />
     </AppProvider>
