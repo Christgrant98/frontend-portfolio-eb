@@ -74,7 +74,9 @@ const PortfolioLightbox: React.FC<PortfolioLightboxProps> = ({
           onClick={onClose}
           aria-label="Cerrar"
         >
-          <span aria-hidden="true">×</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
         </button>
 
         {hasMultiple && canGoPrev && (
@@ -87,7 +89,9 @@ const PortfolioLightbox: React.FC<PortfolioLightboxProps> = ({
             }}
             aria-label="Imagen anterior"
           >
-            ‹
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
           </button>
         )}
         {hasMultiple && canGoNext && (
@@ -100,18 +104,19 @@ const PortfolioLightbox: React.FC<PortfolioLightboxProps> = ({
             }}
             aria-label="Siguiente imagen"
           >
-            ›
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M9 18l6-6-6-6" />
+            </svg>
           </button>
         )}
 
         <div className="portfolio-lightbox__image-wrap" onClick={(e) => e.stopPropagation()}>
           <img
             src={item.img}
-            alt={item.title}
+            alt=""
             className="portfolio-lightbox__image"
           />
         </div>
-        <p className="portfolio-lightbox__caption">{item.title}</p>
       </div>
     </div>
   );

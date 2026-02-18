@@ -6,15 +6,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
-  animation: portfolio-lightbox-fade-in 0.2s ease-out;
+  animation: portfolio-lightbox-fade-in 0.25s ease-out;
 }
 
 .portfolio-lightbox__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(0, 0, 0, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   cursor: pointer;
 }
 
@@ -32,30 +34,33 @@
 
 .portfolio-lightbox__close {
   position: absolute;
-  top: -3rem;
-  right: 0;
-  width: 2.75rem;
-  height: 2.75rem;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0;
   border: none;
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  font-size: 1.75rem;
-  line-height: 1;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .portfolio-lightbox__close:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.portfolio-lightbox__close:active {
+  transform: scale(0.96);
 }
 
 .portfolio-lightbox__close:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid rgba(255, 255, 255, 0.8);
   outline-offset: 2px;
 }
 
@@ -67,85 +72,92 @@
   height: 3rem;
   padding: 0;
   border: none;
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  font-size: 2.5rem;
-  line-height: 1;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .portfolio-lightbox__nav:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.portfolio-lightbox__nav:active {
+  transform: translateY(-50%) scale(0.96);
 }
 
 .portfolio-lightbox__nav:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid rgba(255, 255, 255, 0.8);
   outline-offset: 2px;
 }
 
 .portfolio-lightbox__nav--prev {
-  left: -1rem;
+  left: 1rem;
 }
 
 .portfolio-lightbox__nav--next {
-  right: -1rem;
+  right: 1rem;
 }
 
 @media (max-width: 768px) {
+  .portfolio-lightbox {
+    padding: 1rem;
+  }
+
   .portfolio-lightbox__close {
-    top: 0.5rem;
-    right: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .portfolio-lightbox__close svg {
+    width: 18px;
+    height: 18px;
   }
 
   .portfolio-lightbox__nav {
     width: 2.5rem;
     height: 2.5rem;
-    font-size: 2rem;
+  }
+
+  .portfolio-lightbox__nav svg {
+    width: 24px;
+    height: 24px;
   }
 
   .portfolio-lightbox__nav--prev {
-    left: 0.25rem;
+    left: 0.5rem;
   }
 
   .portfolio-lightbox__nav--next {
-    right: 0.25rem;
+    right: 0.5rem;
   }
 }
 
 .portfolio-lightbox__image-wrap {
-  max-width: 90vw;
-  max-height: 75vh;
+  max-width: 92vw;
+  max-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  animation: portfolio-lightbox-image-in 0.3s ease-out 0.05s both;
 }
 
 .portfolio-lightbox__image {
   max-width: 100%;
-  max-height: 75vh;
+  max-height: 88vh;
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: 4px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.portfolio-lightbox__caption {
-  margin: 1rem 0 0;
-  padding: 0 1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1rem;
-  text-align: center;
-  max-width: 90vw;
+  border-radius: 2px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
 }
 
 @keyframes portfolio-lightbox-fade-in {
@@ -154,5 +166,16 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes portfolio-lightbox-image-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
